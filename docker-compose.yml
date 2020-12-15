@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3
+    ports:
+      - '5672:5672'
+  rpc_microservice:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: ./entrypoint.sh nameko run hello_world --config nameko_config.yml
