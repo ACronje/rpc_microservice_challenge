@@ -18,7 +18,7 @@ docker-compose up
 
 ```bash
 ➜  rpc_microservice_challenge git:(master) ✗ docker exec -it rpc_microservice_challenge_rpc_microservice_1 ./entrypoint.sh nameko shell --config nameko_config.yml
->>> n.rpc.service.string_compression('Howdie', 'Hello', 'Hi')
+>>> n.rpc.service.compress_strings('Howdie', 'Hello', 'Hi')
 {'Howdie': 'eJzzyC9PyUwFAAggAmE=', 'Hello': 'eJzzSM3JyQcABYwB9Q==', 'Hi': 'eJzzyAQAAPsAsg=='}
 ```
 
@@ -26,6 +26,6 @@ docker-compose up
 
 ```bash
 ➜  rpc_microservice_challenge git:(master) ✗ docker exec -it rpc_microservice_challenge_rpc_microservice_1 ./entrypoint.sh nameko shell --config nameko_config.yml
->>> n.rpc.service.string_decompression('eJzzyC9PyUwFAAggAmE=')
+>>> n.rpc.service.decompress_string('eJzzyC9PyUwFAAggAmE=')
 'Howdie'
 ```
